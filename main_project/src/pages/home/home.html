@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title  class="bar bar-header bar-calm">
+        Photo	Journal
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<button ion-button full (click)='takePhoto()'>takePhoto</button>
+
+<!-- {{today}} -->
+<ion-list>
+<ion-item ion-item *ngFor="let image of imageshow">
+<ion-card>
+<ion-item-sliding #item>
+  <ion-item>
+  <img [src]="image.img"/>
+  <div class="card-title">{{image.photo}}</div>
+  <div class="card-subtitle">{{image.time | date:'yy/MM/dd  HH:ss'}}</div>
+
+  </ion-item>
+  <ion-item-options side="left">
+    <button ion-button color="danger" (click)="remove(image)" >remove</button>
+  </ion-item-options>
+  <ion-item-options side ="right">
+    <button ion-button (click)="share(image)">share</button>
+  </ion-item-options>
+</ion-item-sliding>
+ </ion-card>
+</ion-item>
+</ion-list>
+<ion-input type='text' [(ngModel)]=db> 댓글 </ion-input>
+<ion-item ion-item *ngFor="let list of lists">
+  <ion-label>{{list}}</ion-label>
+</ion-item>
+<button ion-button (click)="plus($event,db)">댓글작성</button>
+</ion-content>
