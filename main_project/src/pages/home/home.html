@@ -1,38 +1,50 @@
 <ion-header>
   <ion-navbar>
-    <ion-title  class="bar bar-header bar-calm">
-        Photo	Journal
+    <ion-title class="bar bar-header bar-calm">
+      <ion-input [(ngModel)]="username" placeholder="Username"></ion-input>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-<button ion-button full (click)='takePhoto()'>takePhoto</button>
+<ion-content class="home">
 
-<!-- {{today}} -->
-<ion-list>
-<ion-item ion-item *ngFor="let image of imageshow">
-<ion-card>
-<ion-item-sliding #item>
-  <ion-item>
-  <img [src]="image.img"/>
-  <div class="card-title">{{image.photo}}</div>
-  <div class="card-subtitle">{{image.time | date:'yy/MM/dd  HH:ss'}}</div>
 
-  </ion-item>
-  <ion-item-options side="left">
-    <button ion-button color="danger" (click)="remove(image)" >remove</button>
-  </ion-item-options>
-  <ion-item-options side ="right">
-    <button ion-button (click)="share(image)">share</button>
-  </ion-item-options>
-</ion-item-sliding>
- </ion-card>
-</ion-item>
-</ion-list>
-<ion-input type='text' [(ngModel)]=db> 댓글 </ion-input>
-<ion-item ion-item *ngFor="let list of lists">
-  <ion-label>{{list}}</ion-label>
-</ion-item>
-<button ion-button (click)="plus($event,db)">댓글작성</button>
+    <ion-list>
+      <div *ngFor="let data of messages">
+        <ion-item *ngIf="username === data.username" style="border-right: solid 5px red;">
+          <p class="Chat-text" item-left>
+            <strong>{{data.username}}: </strong>
+            {{data.message}}
+          </p>
+          <p class = "chat-time" item-right>
+            {{data.date | date:'dd/MM/yyyy'}}
+          </p>
+        </ion-item>
+        <ion-item *ngIf="username === data.username" style="border-right: solid 5px green;">
+          <p class="Chat-text" item-left>
+            <strong>{{data.username}}: </strong>
+            {{data.message}}
+          </p>
+          <p class = "chat-time" item-right>
+            {{data.date | date:'dd/MM/yyyy'}}
+          </p>
+        </ion-item>
+      </div>
+    </ion-list>
 </ion-content>
+
+<ion-footer>
+  <form #f="ngForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col width-80>
+          <ion-input [(ngModel)]="chat" name="chatText" required placeholder="type here..."></ion-input>
+        </ion-col>
+        <ion-col width-20 center>
+          <!-- dd <ion-input [(ngModel)]="binding"></ion-input> -->
+          <button (click)="chatSend(f.value, f.valid)" ion-button color="light" full [disabled]="f.valid === false">send</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-footer>

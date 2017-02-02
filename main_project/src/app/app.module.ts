@@ -1,7 +1,8 @@
-import { NgModule, ErrorHandler } from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { NgModule } from '@angular/core';
+import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+
 import {Storage} from '@ionic/storage'
 @NgModule({
   declarations: [
@@ -18,4 +19,9 @@ import {Storage} from '@ionic/storage'
   ],
   providers: [Storage]
 })
+
+// app.use(function(req, res, next)){
+//
+// });
+
 export class AppModule {}
