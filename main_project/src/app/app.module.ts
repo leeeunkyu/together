@@ -1,12 +1,16 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import {Storage} from '@ionic/storage'
+import { Page1 } from '../pages/page1/page1';
+import { Page2 } from '../pages/page2/page2';
+import { Login } from '../pages/login/login';
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    Page1,
+    Page2,
+    Login
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -14,8 +18,10 @@ import {Storage} from '@ionic/storage'
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    Page1,
+    Page2,
+    Login
   ],
-  providers: [Storage]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

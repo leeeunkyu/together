@@ -24,10 +24,8 @@
     "ionic-native": "2.4.1",
     "ionicons": "3.0.0",
     "rxjs": "5.0.0-beta.12",
-    "socket.io": "^1.7.2",
-    "socket.io-client": "^1.7.2",
-    "sw-toolbox": "3.4.0",
-    "zone.js": "0.6.26"
+    "zone.js": "0.6.26",
+    "sw-toolbox": "3.4.0"
   },
   "devDependencies": {
     "@ionic/app-scripts": "1.0.0",
@@ -35,15 +33,12 @@
   },
   "cordovaPlugins": [
     "cordova-plugin-whitelist",
-    "cordova-plugin-console",
     "cordova-plugin-statusbar",
-    "cordova-plugin-device",
+    "cordova-plugin-console",
     "cordova-plugin-splashscreen",
+    "cordova-plugin-device",
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [],
-  "description": "main_project: An Ionic project",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "ISC"
+  "description": "main_project: An Ionic project"
 }
