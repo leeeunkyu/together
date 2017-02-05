@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Myprovider } from '../../providers/myprovider'
-import { Push, Vibration, Toast, LocalNotifications } from 'ionic-native';
-import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { Vibration, Toast } from 'ionic-native';
+import { NavController, ModalController } from 'ionic-angular';
 import { Calendar } from 'ionic-native';
 import { CalendarPage } from '../calendar/calendar';
 import { ContactPage } from '../contact/contact';

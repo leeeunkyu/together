@@ -3,10 +3,8 @@
     <ion-title>Login Page</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
-
-  <iframe src="http://mobilelab.woobi.co.kr/xe/index.php?mid=page_XTfb51&module_srl=149" id="ionic_login" name="LoginBoard" ></iframe>
-
-  <button ion-button (click) = "goAppPage()" >Go Next</button>
-
+<ion-content scrollToptop="0" scrollLefttop="0" isCrolling="true">
+  <iframe src="http://mobilelab.woobi.co.kr/xe/index.php?mid=ionicLogin&module_srl=214" id="ionic_login"></iframe>
+  <button ion-button (click)="goAppPage()">Go Next</button>
+  <button ion-button (click)="toggleToolbar()">Toggle Toolbar</button>
 </ion-content>
