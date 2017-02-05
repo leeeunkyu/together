@@ -1,10 +1,14 @@
 <ion-header>
+
   <ion-navbar>
     <ion-title>Login Page</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content scrollToptop="0" scrollLefttop="0" isCrolling="true">
-  <iframe src="http://mobilelab.woobi.co.kr/xe/index.php?mid=ionicLogin&module_srl=214" id="ionic_login"></iframe>
+<ion-content scrollToptop="0" scrollLefttop="0">
+  <!-- <meta name="viewport" content="width=device-width"> -->
+  <div class="video-container">
+    <iframe src="http://mobilelab.woobi.co.kr/xe/index.php?act=dispMemberLoginForm&module_srl=214" id="ionic_login"></iframe>
+  </div>
   <button ion-button (click)="goAppPage()">Go Next</button>
   <button ion-button (click)="toggleToolbar()">Toggle Toolbar</button>
 </ion-content>
