@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-title>
+      ETC
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="etc">
+      <ion-segment-button value="recommend"  (click) = "goNewView()">
+        장소 추천
+      </ion-segment-button>
+      <ion-segment-button value="calendar" (click) = "goNewView2()">
+        여행 날짜등록
+      </ion-segment-button>
+      <ion-segment-button value="contact"(click) = "goNewView3()">
+        전화번호부
+      </ion-segment-button>
+      <ion-segment-button value="kakao">
+        카카오
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="etc">
+   <ion-item *ngSwitchCase="'calendar'">
+
+   </ion-item>
+
+   <ion-item *ngSwitchCase="'recommend'">
+     <button ion-item *ngFor="let weather of weatherList">
+           <h2>도시이름: {{weather.name}}</h2>
+           <h2>날씨: {{weather.main.temp}}</h2>
+     </button>
+     <h1>
+       <!-- <ion-thumbnail item-left>
+         <img src="{{'http://openweathermap.org/img/w/'+bestresult.weather[0]icon+'.png'}}"	height=100}}>
+       </ion-thumbnail> -->
+       놀러가기좋은도시{{bestresult.name}}
+     </h1>
+   </ion-item>
+
+   <ion-item *ngSwitchCase="'contact'">
+   </ion-item>
+
+   <ion-item *ngSwitchCase="'kakao'">
+   </ion-item>
+ </div>
+  <!-- <button (click) = "goNewView()">일기예보</button>
+  <button (click) = "goNewView2()">켈린더테스트</button>
+  <button (click) = "goNewView3()">알림</button>
+  <button (click) = "goNewView4()">알림2</button>
+  <button (click) = "goNewView5()">dbtest</button> -->
+</ion-content>
