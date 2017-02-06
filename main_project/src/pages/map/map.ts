@@ -26,4 +26,7 @@ export class MapPage {
 
   }
 
+  plus(){
+    this.maps.addMarker(37.580132, 126.923123);
+  }
 }
