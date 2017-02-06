@@ -8,6 +8,12 @@
 
   <ion-navbar>
     <ion-title>contact</ion-title>
+    <ion-buttons end>
+  <button ion-button icon-only (click)="dismiss()">
+    <ion-icon name='close-circle'></ion-icon>
+
+  </button>
+</ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -25,4 +31,5 @@
   </ion-item>
 </ion-list>
 <button ion-button block (click)="plus()">번호등록</button>
+
 </ion-content>

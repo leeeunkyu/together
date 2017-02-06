@@ -8,6 +8,12 @@
 
   <ion-navbar>
     <ion-title>calendar</ion-title>
+    <ion-buttons end>
+  <button ion-button icon-only (click)="dismiss()">
+    <ion-icon name='close-circle'></ion-icon>
+
+  </button>
+</ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -15,6 +21,10 @@
 
 <ion-content padding>
   <ion-list>
+    <ion-item>
+      <ion-label stacked>여행제목</ion-label>
+        <ion-input type='text' [(ngModel)]='data.title'></ion-input>
+    </ion-item>
   <ion-item>
     <ion-label stacked>놀러갈지역</ion-label>
       <ion-input type='text' [(ngModel)]='data.city'></ion-input>
@@ -83,6 +93,10 @@
 <ion-item>
   <ion-label stacked>몇일동안</ion-label>
     <ion-input type='number' [(ngModel)]='data.plus'></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label stacked>메모</ion-label>
+    <ion-input type='text' [(ngModel)]='data.note'></ion-input>
 </ion-item>
 </ion-list>
 <button ion-button block (click)="select()">날짜선정</button>

@@ -22,4 +22,8 @@ export class ContactPage {
   plus() {
     this.view.dismiss(this.data);
   }
+  dismiss() {
+      console.log('dismiss');
+      this.view.dismiss(0);
+    }
 }
