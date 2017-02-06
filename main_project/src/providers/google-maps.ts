@@ -93,7 +93,8 @@ export class GoogleMaps {
         // UNCOMMENT FOR NORMAL USE
         //let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-        let latLng = new google.maps.LatLng(40.713744, -74.009056);
+        // let latLng = new google.maps.LatLng(40.713744, -74.009056);
+        let latLng = new google.maps.LatLng(37.580132, 126.923123);
 
         let mapOptions = {
           center: latLng,
