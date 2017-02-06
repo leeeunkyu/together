@@ -94,6 +94,7 @@ export class Page3 {
         // console.log(this.bestresult);
         this.sort(this.bestresult,this.citylsit.length-1);
   }
+  
   sort(list,high:number){
     console.log(high);
     console.log(list);
