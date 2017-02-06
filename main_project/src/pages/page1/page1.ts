@@ -1,5 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { MapPage } from '../map/map';
+import { ListPage } from '../list/list';
 
 declare var google;
 
@@ -8,28 +9,9 @@ declare var google;
   templateUrl: 'page1.html'
 })
 export class Page1 {
-  @ViewChild('map') mapElement;
-  map: any;
-
-  constructor(public navCtrl: NavController){
-
-  }
-
-  ionViewDidLoad(){
-    this.initMap();
-  }
-
-  initMap(){
-    let latLng = new google.maps.LatLng(-34.9290, 138.6010);
-
-    let mapOptions = {
-      center: latLng,
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-
-    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+  tab1Root: any = MapPage;
+  tab2Root: any = ListPage;
+  constructor(){
 
   }
-
 }

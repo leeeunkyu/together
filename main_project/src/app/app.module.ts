@@ -10,6 +10,11 @@ import { ContactPage } from '../pages/contact/contact';
 import { Tutorial } from '../pages/tutorial/tutorial';
 import { Storage } from '@ionic/storage'
 import { Myprovider } from '../providers/myprovider';
+import { MapPage } from '../pages/map/map';
+import { ListPage } from '../pages/list/list';
+import { Locations } from '../providers/locations';
+import { GoogleMaps } from '../providers/google-maps';
+import { Connectivity } from '../providers/connectivity';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,9 @@ import { Myprovider } from '../providers/myprovider';
     Login,
     CalendarPage,
     ContactPage,
-    Tutorial
+    Tutorial,
+    MapPage,
+    ListPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -34,8 +41,10 @@ import { Myprovider } from '../providers/myprovider';
     Login,
     CalendarPage,
     ContactPage,
-    Tutorial
+    Tutorial,
+    MapPage,
+    ListPage
   ],
-  providers: [Myprovider, Storage]
+  providers: [Myprovider, Storage, Locations, GoogleMaps, Connectivity]
 })
 export class AppModule {}
