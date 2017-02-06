@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams,ViewController } from 'ionic-angular';
 
 /*
   Generated class for the Calendar page.
@@ -13,7 +13,7 @@ import { NavController, NavParams, ViewController } from 'ionic-angular';
 })
 export class CalendarPage {
   //data: {city:string}={city:''};
-   data: {city:string, year:number,month:number,day:number,plus:number,title:string,note:string}={city:'',year:2017,month:1,day:1,plus:0,title:'',note:''};
+   data: {city:string, year:number,month:number,day:number,plus:number,title:string,note:string,type:string}={city:'',year:2017,month:1,day:1,plus:0,title:'',note:'',type:"bacpack"};
   constructor(public navCtrl: NavController, public navParams: NavParams,public view: ViewController) {}
 
   ionViewDidLoad() {

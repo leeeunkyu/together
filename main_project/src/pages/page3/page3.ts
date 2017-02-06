@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Myprovider } from '../../providers/myprovider'
 import { Vibration, Toast } from 'ionic-native';
-import { NavController, ModalController, LoadingController } from 'ionic-angular';
+import { NavController, ModalController, LoadingController, AlertController } from 'ionic-angular';
 import { Calendar } from 'ionic-native';
 import { CalendarPage } from '../calendar/calendar';
 import { ContactPage } from '../contact/contact';
@@ -35,15 +35,14 @@ export class Page3 {
   enum:number;
   etc:string;
   contactlist=[];
-  images=[];
-  constructor(public navCtrl: NavController, public weather : Myprovider,public modalCtrl : ModalController,public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public weather : Myprovider,public modalCtrl : ModalController,public loadingCtrl: LoadingController,public alertCtrl: AlertController) {
     this.cnt=0;
     this.max=0;
     this.num=0;
-    this.images[0]="assets/flower.png";
-    this.images[1]="assets/mountain.png";
-    this.images[2]="assets/paris.png";
-    this.images[3]="assets/sea.png";
+    // this.images[0]="assets/flower.png";
+    // this.images[1]="assets/mountin.png";
+    // this.images[2]="assets/paris.png";
+    // this.images[3]="assets/sea.png";
     let loader = this.loadingCtrl.create({
     content: "기다려 주세용",
     duration: 3000
@@ -94,7 +93,6 @@ export class Page3 {
         // console.log(this.bestresult);
         this.sort(this.bestresult,this.citylsit.length-1);
   }
-
   sort(list,high:number){
     console.log(high);
     console.log(list);
@@ -174,17 +172,14 @@ export class Page3 {
        console.log(toast);
      }
      );
+
      Vibration.vibrate(1000);
      this.calenlist.push({
        title:data.title,
        city:data.city,
        day:data.month+"/"+data.day,
-       img:this.images[this.num]
+       img:"assets/"+data.type+".png"
      });
-     this.num++;
-     if(this.num==3){
-       this.num=0;
-     }
     }
   });
     m.present();
@@ -203,7 +198,10 @@ export class Page3 {
       );
       this.contactlist.push({
         name:data.name,
-        pnumber:data.phonenumber
+        pnumber:data.phonenumber,
+        typename:data.type,
+        memo:data.memo,
+        star:data.star
       });
       Toast.show(data.name+"번호가 등록되었습니다.", 'long', 'center').subscribe(
       toast => {
@@ -215,9 +213,27 @@ export class Page3 {
    });
     m2.present();
   }
-  contectconnection(pnumber){
+  contectconnection(contact){
+    let confirm = this.alertCtrl.create({
+         title: contact.name,
+         message:`
+         <p>`+contact.memo+`</p> <p>`+contact.star+`</p>`,
+         buttons: [
+           {
+             text: '전화걸기',
+             handler: () => {
+               window.location = "tel:+82-"+contact.pnumber;
+             }
+           },
+           {
+             text: '취소',
+             handler: () => {
+             }
+           }
+         ]
+       });
+       confirm.present();
 
-    window.location = "tel:+82-"+pnumber;
     // Contacts.find(['phoneNumbers'],{filter:"01029249243"}).then((contacts)=>{
     //
     // });
@@ -233,16 +249,5 @@ export class Page3 {
   }
   infor(){
     this.navCtrl.push(InformationPage);
-  }
-  getItems(ev: any) {
-
-    let val = ev.target.value;
-
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.contactlist = this.contactlist.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }
   }
 }

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar no-border-bottom>
     <ion-title>
-      추가 정보
+      추가 기능
     </ion-title>
   </ion-navbar>
 
@@ -34,7 +34,7 @@
     <div class="card-subtitle">{{cal.day}}Day</div>
   </ion-card>
      <button ion-button block	color ="secondary" clear	(click) = "goNewView2()">
-       <ion-icon	name='contact'>날짜 등록하기</ion-icon>
+       <ion-icon	name='calendar'>날짜 등록하기</ion-icon>
      </button>
    </ion-item>
 
@@ -55,10 +55,8 @@
    </ion-item>
 
    <ion-item *ngSwitchCase="'contact'">
-     <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar> -->
-     <button ion-item *ngFor="let c of contactlist" (click)="contectconnection(c.pnumber)">
-           <h2>이름: {{c.name}}</h2>
-           <h2>번호: {{c.pnumber}}</h2>
+     <button ion-item *ngFor="let c of contactlist" (click)="contectconnection(c)">
+        <h4><ion-icon name={{c.typename}}></ion-icon>{{c.name}}</h4><h4> Tel: {{c.pnumber}}</h4>
      </button>
      <button ion-button block clear (click) = "goNewView3()">
        <ion-icon	name='contact'>번호등록</ion-icon>

@@ -30,15 +30,28 @@
       <ion-input type='text' [(ngModel)]='data.city'></ion-input>
   </ion-item>
   <ion-item>
-  <ion-label stacked>년도</ion-label>
+  <ion-label stacked>테마</ion-label>
+  <ion-select [(ngModel)]='data.type'>
+    <ion-option value='bacpack'>배낭여행!</ion-option>
+    <ion-option value='flower'>벚꽃놀이!</ion-option>
+    <ion-option value='mountin'>산으로!</ion-option>
+    <ion-option value='paris'>해외여행!</ion-option>
+    <ion-option value='sea'>바다여행!</ion-option>
+    <ion-option value='ski'>스키장!</ion-option>
+    <ion-option value='train'>내일로여행!</ion-option>
+    <ion-option value='valley'>계곡놀이!</ion-option>
+
+  </ion-select>
+  </ion-item>
+  <ion-item>
+  <ion-label>년도
   <ion-select [(ngModel)]='data.year'>
     <ion-option value='2017'>2017</ion-option>
     <ion-option value='2018'>2018</ion-option>
     <ion-option value='2019'>2019</ion-option>
 </ion-select>
-</ion-item>
-<ion-item>
-  <ion-label stacked>월</ion-label>
+</ion-label>
+    <ion-label>월
   <ion-select [(ngModel)]='data.month'>
     <ion-option value='12'>12</ion-option>
     <ion-option value='11'>11</ion-option>
@@ -53,9 +66,8 @@
     <ion-option value='2'>2</ion-option>
     <ion-option value='1'>1</ion-option>
 </ion-select>
-</ion-item>
-<ion-item>
-  <ion-label stacked>일</ion-label>
+</ion-label>
+  <ion-label >일
   <ion-select [(ngModel)]='data.day'>
   <ion-option value='31'>31</ion-option>
   <ion-option value='30'>30</ion-option>
@@ -89,6 +101,7 @@
   <ion-option value='2'>2</ion-option>
   <ion-option value='1'>1</ion-option>
 </ion-select>
+</ion-label>
 </ion-item>
 <ion-item>
   <ion-label stacked>몇일동안</ion-label>

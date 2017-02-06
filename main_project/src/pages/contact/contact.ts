@@ -12,7 +12,7 @@ import { NavController, NavParams,ViewController } from 'ionic-angular';
   templateUrl: 'contact.html'
 })
 export class ContactPage {
-  data: {name:string, phonenumber:number}={name:'',phonenumber:0};
+  data: {name:string, phonenumber:number,type:string,memo:string,star:string}={name:'',phonenumber:0,type:'tourist',memo:'메모없음',star:'★'};
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public view: ViewController) {}
 
