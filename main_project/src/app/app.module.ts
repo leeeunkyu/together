@@ -7,6 +7,8 @@ import { Page3 } from '../pages/page3/page3';
 import { Login } from '../pages/login/login';
 import { CalendarPage } from '../pages/calendar/calendar';
 import { ContactPage } from '../pages/contact/contact';
+import { Tutorial } from '../pages/tutorial/tutorial';
+import { Storage } from '@ionic/storage'
 import { Myprovider } from '../providers/myprovider';
 
 @NgModule({
@@ -17,7 +19,8 @@ import { Myprovider } from '../providers/myprovider';
     Page3,
     Login,
     CalendarPage,
-    ContactPage
+    ContactPage,
+    Tutorial
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -30,8 +33,9 @@ import { Myprovider } from '../providers/myprovider';
     Page3,
     Login,
     CalendarPage,
-    ContactPage
+    ContactPage,
+    Tutorial
   ],
-  providers: [Myprovider]
+  providers: [Myprovider, Storage]
 })
 export class AppModule {}
