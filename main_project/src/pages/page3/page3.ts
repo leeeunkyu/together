@@ -11,7 +11,7 @@ import { SocialSharing } from 'ionic-native';
 declare var window;
 
 @Component({
-  selector: 'page3',
+  selector: 'page-page3',
   templateUrl: 'page3.html'
 })
 export class Page3 {
