@@ -1,7 +1,10 @@
+
+
 import { Injectable } from '@angular/core';
 // import { Http } from '@angular/http';
 import { Network } from 'ionic-native';
 import { Platform } from 'ionic-angular';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 declare var Connection;
@@ -30,4 +33,14 @@ export class Connectivity {
       return !navigator.onLine;
     }
   }
+
+  watchOnline(): Observable<any> {
+    return Network.onConnect();
+  }
+
+  watchOffline(): Observable<any> {
+    return Network.onDisconnect();
+  }
+
+
 }

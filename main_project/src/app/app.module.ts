@@ -15,6 +15,7 @@ import { ListPage } from '../pages/list/list';
 import { Locations } from '../providers/locations';
 import { GoogleMaps } from '../providers/google-maps';
 import { Connectivity } from '../providers/connectivity';
+import { GoogleMapsCluster } from '../providers/google-maps-cluster';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,6 @@ import { Connectivity } from '../providers/connectivity';
     MapPage,
     ListPage
   ],
-  providers: [Myprovider, Storage, Locations, GoogleMaps, Connectivity]
+  providers: [Myprovider, Storage, Locations, GoogleMaps, GoogleMapsCluster, Connectivity]
 })
 export class AppModule {}
