@@ -14,7 +14,7 @@ export class MapPage {
   @ViewChild('pleaseConnect') pleaseConnect: ElementRef;
 
   constructor(public navCtrl: NavController, public maps: GoogleMaps, public platform: Platform,
-    public locations: Locations, public mapCluster: GoogleMapsCluster) {
+    public locations: Locations, public mapCluster: GoogleMapsCluster ) {
 
   }
 
@@ -25,6 +25,8 @@ export class MapPage {
       let mapLoaded = this.maps.init(this.mapElement.nativeElement, this.pleaseConnect.nativeElement).then((map) => {
         this.mapCluster.addCluster(map);
       });
+
+
       let locationsLoaded = this.locations.load();
 
       Promise.all([
@@ -38,6 +40,8 @@ export class MapPage {
       });
     });
   }
+
+
 
   // plus() {
   //   this.maps.addMarker(37.222511, 127.186255);

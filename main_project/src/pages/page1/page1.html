@@ -5,6 +5,10 @@
     </button>
     <ion-title>Together App</ion-title>
   </ion-navbar>
+  <!-- <h3>Current Latitude: {{locationTracker.lat}}</h3>
+  <h3>Current Longitude: {{locationTracker.lng}}</h3>
+  <button ion-button full primary (click)="start()">Start Tracking</button>
+  <button ion-button full primary (click)="stop()">Stop Tracking</button> -->
 </ion-header>
 
 <ion-content>
@@ -12,6 +16,7 @@
     <ion-tab [root]="tab1Root" tabTitle="Map" tabIcon="navigate"></ion-tab>
     <ion-tab [root]="tab2Root" tabTitle="List" tabIcon="list"></ion-tab>
   </ion-tabs>
+
   <!-- <button ion-button secondary menuToggle>
     <ion-icon name="menu"> Menu 보기</ion-icon>
   </button> -->
