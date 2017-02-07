@@ -16,17 +16,25 @@ export class MapPage {
 
   }
 
-  ionViewDidLoad(){
+  ionViewDidLoad() {
 
     this.platform.ready().then(() => {
+      let mapLoaded = this.maps.init(this.mapElement.nativeElement, this.pleaseConnect.nativeElement);
+      let locationsLoaded = this.locations.load();
 
-        let mapLoaded = this.maps.init(this.mapElement.nativeElement, this.pleaseConnect.nativeElement);
-
+      Promise.all([
+        mapLoaded,
+        locationsLoaded
+      ]).then((result) => {
+        let locations = result[1];
+        for (let location of locations) {
+          this.maps.addMarker(location.latitude, location.longitude);
+        }
+      });
     });
-
   }
 
-  plus(){
-    this.maps.addMarker(37.580132, 126.923123);
-  }
+  // plus() {
+  //   this.maps.addMarker(37.222511, 127.186255);
+  // }
 }

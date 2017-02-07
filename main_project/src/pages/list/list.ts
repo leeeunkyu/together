@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
+import { Locations } from '../../providers/locations';
 
 /*
   Generated class for the List page.
@@ -13,7 +14,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ListPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public locations: Locations) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListPage');

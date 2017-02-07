@@ -13,6 +13,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = Tutorial;
+  activePage: any;
 
   pages: Array<{title: string, component: any}>;
 
@@ -22,10 +23,12 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: '기본 기능', component: Page1 },
+      { title: '지도 보기', component: Page1 },
       { title: '사진 공유', component: Page2 },
       { title: '추가 기능', component: Page3 }
     ];
+
+    this.activePage = this.pages[0];
 
   }
 
@@ -42,5 +45,10 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+    this.activePage = page;
+  }
+
+  checkActive(page){
+    return page == this.activePage;
   }
 }
