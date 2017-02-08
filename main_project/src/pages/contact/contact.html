@@ -9,11 +9,11 @@
   <ion-navbar>
     <ion-title>contact</ion-title>
     <ion-buttons end>
-  <button ion-button icon-only (click)="dismiss()">
+      <button ion-button icon-only (click)="dismiss()">
     <ion-icon name='close-circle'></ion-icon>
 
   </button>
-</ion-buttons>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -21,39 +21,39 @@
 
 <ion-content padding>
   <ion-list>
-  <ion-item>
-    <ion-label stacked>이름</ion-label>
+    <ion-item>
+      <ion-label stacked>이름</ion-label>
       <ion-input type='text' [(ngModel)]='data.name'></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label stacked>번호</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>번호</ion-label>
       <ion-input type='text' [(ngModel)]='data.phonenumber'></ion-input>
-  </ion-item>
-  <ion-item>
-  <ion-label stacked>종류</ion-label>
-  <ion-select [(ngModel)]='data.type'>
-    <ion-option value='restaurant'>식당</ion-option>
-    <ion-option value='home'>숙박업소</ion-option>
-    <ion-option value='logo-instagram'>관광지</ion-option>
-    <ion-option value='people'>친구</ion-option>
-</ion-select>
-</ion-item>
-<ion-item>
-  <ion-label stacked>메모사항</ion-label>
-  <ion-input type="text" [(ngModel)]='data.memo'></ion-input>
-</ion-item>
-<ion-item>
-<ion-label stacked>별점</ion-label>
-<ion-select [(ngModel)]='data.star'>
-  <ion-option value='★'>★</ion-option>
-  <ion-option value='★★'>★★</ion-option>
-  <ion-option value='★★★'>★★★</ion-option>
-  <ion-option value='★★★★'>★★★★</ion-option>
-  <ion-option value='★★★★★'>★★★★★</ion-option>
-</ion-select>
-</ion-item>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>종류</ion-label>
+      <ion-select [(ngModel)]='data.type'>
+        <ion-option value='restaurant'>식당</ion-option>
+        <ion-option value='home'>숙박업소</ion-option>
+        <ion-option value='logo-instagram'>관광지</ion-option>
+        <ion-option value='people'>친구</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>메모사항</ion-label>
+      <ion-input type="text" [(ngModel)]='data.memo'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>별점</ion-label>
+      <ion-select [(ngModel)]='data.star'>
+        <ion-option value='★'>★</ion-option>
+        <ion-option value='★★'>★★</ion-option>
+        <ion-option value='★★★'>★★★</ion-option>
+        <ion-option value='★★★★'>★★★★</ion-option>
+        <ion-option value='★★★★★'>★★★★★</ion-option>
+      </ion-select>
+    </ion-item>
 
-</ion-list>
-<button ion-button block (click)="plus()">번호등록</button>
+  </ion-list>
+  <button ion-button block (click)="plus()">번호등록</button>
 
 </ion-content>

@@ -15,7 +15,7 @@ export class MyApp {
   rootPage: any = Tutorial;
   activePage: any;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform) {
 
@@ -48,7 +48,7 @@ export class MyApp {
     this.activePage = page;
   }
 
-  checkActive(page){
+  checkActive(page) {
     return page == this.activePage;
   }
 }
