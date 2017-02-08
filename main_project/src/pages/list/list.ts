@@ -13,11 +13,10 @@ import { Locations } from '../../providers/locations';
   templateUrl: 'list.html'
 })
 export class ListPage {
-
+  i: number;
   constructor(public navCtrl: NavController, public locations: Locations) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListPage');
-  }
-
+  }  
 }

@@ -1,8 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Locations } from '../../providers/locations';
 import { GoogleMaps } from '../../providers/google-maps';
-import { NavController, Platform } from 'ionic-angular';
+import { NavController, Platform, Loading } from 'ionic-angular';
 import { GoogleMapsCluster } from '../../providers/google-maps-cluster';
+import { Geolocation } from 'ionic-native';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'page-map',
@@ -14,7 +16,39 @@ export class MapPage {
   @ViewChild('pleaseConnect') pleaseConnect: ElementRef;
 
   constructor(public navCtrl: NavController, public maps: GoogleMaps, public platform: Platform,
-    public locations: Locations, public mapCluster: GoogleMapsCluster ) {
+    public locations: Locations, public mapCluster: GoogleMapsCluster, public nav: NavController) {
+
+  }
+
+  getCurrentLocation() {
+    let loading = Loading.caller({
+      content: 'Locating...'
+    })
+
+    this.navCtrl.isActive(loading);
+
+    let options = { timeout: 10000, enableHighAccuracy: true };
+    let locationObs = Observable.create(observable => {
+      Geolocation.getCurrentPosition(options)
+        .then(resp => {
+          // let lat = resp.coords.latitude;
+          // let lng = resp.coords.longitude;
+
+          // let location = new google.maps.LatLng(lat, lng);
+          //
+          // observable.next(location);
+
+          loading.dismiss();
+
+          // return location
+        },
+        (err) => {
+          console.log('Geolocation err: ' + err);
+          loading.dismiss();
+        })
+    })
+
+    return locationObs;
 
   }
 
