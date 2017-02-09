@@ -42,9 +42,7 @@ export class GoogleMapsCluster {
     }
 
     addCluster(map){
-
         if(google.maps){
-
             //Convert locations into array of markers
             let markers = this.locations.map((location) => {
                 return new google.maps.Marker({
@@ -52,7 +50,6 @@ export class GoogleMapsCluster {
                     label: "Hello!"
                 });
             });
-
             this.markerCluster = new MarkerClusterer(map, markers, {imagePath: 'assets/m'});
 
         } else {
