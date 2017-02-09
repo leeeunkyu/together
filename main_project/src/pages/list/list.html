@@ -13,14 +13,20 @@
 
 <ion-content>
 
-  <ion-list no-lines>
+  <ion-list>
     <button ion-item *ngFor="let m of maplist" (click)="searchmap(m)">
-            <ion-avatar item-left>
-                <ion-icon name="pin"></ion-icon>
-            </ion-avatar>
-            <h2>{{m.location}}</h2>
-            <p>{{m.memo}}</p>
-          </button>
+      <ion-avatar item-left>
+        <ion-icon name="pin"></ion-icon>
+      </ion-avatar>
+      <ion-item>
+        <h2>{{m.location}}</h2>
+        <p>{{m.memo}}</p>
+      </ion-item>
+
+      <!-- <ion-item-options>
+        <button danger (click)="removeItem(item)"><icon trash></icon> Delete</button>
+      </ion-item-options> -->
+    </button>
   </ion-list>
 
 </ion-content>

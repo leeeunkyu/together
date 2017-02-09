@@ -4,6 +4,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 import { Page3 } from '../pages/page3/page3';
+import { Page4 } from '../pages/page4/page4';
 import { Tutorial } from '../pages/tutorial/tutorial';
 
 @Component({
@@ -25,7 +26,8 @@ export class MyApp {
     this.pages = [
       { title: '지도 보기', component: Page1 },
       { title: '사진 공유', component: Page2 },
-      { title: '추가 기능', component: Page3 }
+      { title: '추가 기능', component: Page3 },
+      { title: '방명록  ', component: Page4 }
     ];
 
     this.activePage = this.pages[0];

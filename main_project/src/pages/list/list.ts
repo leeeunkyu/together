@@ -15,6 +15,7 @@ import { MapPage } from '../map/map';
   templateUrl: 'list.html'
 })
 export class ListPage {
+  i: number;
   // maplist:{location:string,memo:string}={location:'',memo:''};
   maplist = []
   constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public maps: GoogleMaps, public mypro: Myprovider) { }
@@ -81,5 +82,13 @@ export class ListPage {
         //
       });
     this.navCtrl.push(MapPage);
+  }
+
+  removeItem(item){
+    for(this.i = 0; this.i < this.maplist.length; this.i++) {
+      if(this.maplist[this.i] == item){
+        this.maplist.splice(this.i, 1);
+      }
+    }
   }
 }
